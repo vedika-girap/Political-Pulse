@@ -1,0 +1,28 @@
+kind = "web"
+previewPath = "/"
+title = "PoliticalPulse"
+description = "A neutral synthetic-data political social-media analytics dashboard for research on Darshan Puttannaiah, MLA, Melukote, Karnataka."
+version = "1.0.0"
+id = "artifacts/politicalpulse"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 22629
+
+[services.development]
+run = "pnpm --filter @workspace/politicalpulse run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/politicalpulse", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/politicalpulse/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "22629"
+BASE_PATH = "/"

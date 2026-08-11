@@ -1,0 +1,132 @@
+Build ONLY the frontend UI for PoliticalPulse.
+
+Do not create a backend.
+Do not create a database.
+Do not install ML/NLP libraries.
+Do not create authentication.
+Do not scrape any website.
+Do not create social-media APIs.
+
+Create a React + TypeScript + Vite dashboard using Tailwind CSS,
+shadcn/ui, Recharts and Lucide icons.
+
+The application is a neutral political social-media analytics
+dashboard for research.
+
+Politician:
+Darshan Puttannaiah
+MLA, Melukote, Karnataka
+Sarvodaya Karnataka Paksha
+
+Create these pages:
+
+1. Dashboard
+2. Posts
+3. Engagement
+4. Audience Response
+5. Topics
+6. Language
+7. Platforms
+8. Peer Benchmarking
+9. AI Insights
+10. Data Sources
+11. Data Import
+12. Methodology
+
+Use SYNTHETIC demo data only.
+
+Clearly display:
+"DEMO DATA — Replace with real dataset"
+
+Create a clean professional SaaS analytics interface.
+
+Use a neutral visual design.
+Do not use political party colors.
+Do not create campaign-style visuals.
+
+Dashboard must contain:
+
+- Total Posts
+- Total Comments
+- Total Engagement
+- Average Engagement
+- Active Platforms
+- Data Coverage
+
+Charts:
+
+- Engagement over time
+- Posts by platform
+- Engagement by platform
+- Topic distribution
+- Sentiment distribution
+- Language distribution
+- Top performing posts
+
+Create functional frontend filtering for:
+
+- platform
+- date range
+- topic
+- language
+- sentiment
+- media type
+
+Create a post explorer table.
+
+Create a comment explorer.
+
+Create post detail and comment detail drawers/modals.
+
+Create responsive layouts.
+
+IMPORTANT ARCHITECTURE:
+
+Keep all data access inside:
+
+src/services/
+
+Create:
+
+src/services/api.ts
+
+with placeholder functions:
+
+getOverview()
+getPosts()
+getComments()
+getEngagement()
+getTopics()
+getSentiment()
+getLanguages()
+getPlatforms()
+getPeers()
+getInsights()
+
+For now these functions should return local demo data.
+
+Do NOT put data directly inside UI components.
+
+Create TypeScript interfaces in:
+
+src/types/
+
+for:
+
+Politician
+PlatformAccount
+Post
+Comment
+Topic
+Analytics
+Insight
+
+The frontend must be designed so that later we can replace the demo service with a FastAPI REST API without rewriting the UI.
+
+Keep the code modular and simple.
+
+Do not add unnecessary dependencies.
+
+After completing this task, stop.
+
+Do not implement backend or ML functionality.
