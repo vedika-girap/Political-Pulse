@@ -1,0 +1,403 @@
+I want to EXTEND the existing PoliticalPulse application.
+
+DO NOT rebuild the application.
+DO NOT regenerate existing pages.
+DO NOT change the current visual design or architecture unless required.
+DO NOT remove or replace existing functionality.
+Preserve all existing routes, components, mock data structures, filters, charts and styling.
+
+We are adding missing functionality to the EXISTING application.
+
+==================================================
+FEATURE 1 — COMPETITOR / PEER BENCHMARKING
+==================================================
+
+Enhance the existing Competitor/Peer Benchmarking page.
+
+The purpose is descriptive comparison of the selected politician's public social-media performance with selected peer politicians.
+
+Add:
+
+1. Peer selector
+2. Comparison period selector
+3. Platform filter
+
+Compare:
+
+- number of posts
+- posting frequency
+- average engagement
+- median engagement
+- engagement rate where available
+- comment volume
+- platform presence
+- content type distribution
+- topic distribution
+- sentiment distribution
+- language distribution
+
+Create:
+
+A. Comparison table
+
+Columns:
+Metric
+Selected Politician
+Peer
+Peer Median
+Gap
+Interpretation
+
+B. Engagement comparison chart
+
+C. Posting frequency comparison
+
+D. Content-type comparison
+
+E. Topic comparison
+
+F. Platform presence comparison
+
+G. Sentiment comparison
+
+Use synthetic demo data for now.
+
+Do NOT claim that one politician is politically "better".
+
+Use neutral wording such as:
+
+"Observed difference"
+"Peer median"
+"Potential opportunity"
+"Area worth testing"
+
+==================================================
+FEATURE 2 — COMPETITOR GAP ANALYSIS
+==================================================
+
+Add a section below the peer comparison:
+
+"Competitive Gap Analysis"
+
+Identify measurable differences between the selected politician and peer median.
+
+Example:
+
+Metric:
+Video Content Share
+
+Selected:
+22%
+
+Peer Median:
+38%
+
+Gap:
+-16 percentage points
+
+Interpretation:
+"Video content represents a smaller share of posts than the selected peer group."
+
+Create opportunity categories:
+
+Platform Opportunity
+Content Format Opportunity
+Topic Opportunity
+Engagement Opportunity
+Posting Consistency Opportunity
+
+Use demo data.
+
+Do not claim causation.
+
+==================================================
+FEATURE 3 — IMPROVEMENT OPPORTUNITIES
+==================================================
+
+Add a new page called:
+
+"Improvement Opportunities"
+
+This page must synthesize the existing analytics with peer benchmarking.
+
+Show opportunity cards containing:
+
+Title
+Observed Evidence
+Metric
+Peer Comparison
+Potential Experiment
+Metric to Monitor
+Confidence
+
+Example:
+
+TITLE:
+"Test More Short-Form Video"
+
+EVIDENCE:
+"Video represents 22% of posts compared with a peer median of 38%."
+
+POTENTIAL EXPERIMENT:
+"Test a higher proportion of short-form video content."
+
+METRIC TO MONITOR:
+"Median engagement per post."
+
+IMPORTANT:
+
+Do not present an opportunity as a guaranteed improvement.
+
+Use wording:
+
+"Potential opportunity"
+"Area worth testing"
+"Observed pattern"
+
+==================================================
+FEATURE 4 — TOPIC OPPORTUNITY MATRIX
+==================================================
+
+Add this visualization to the existing Topics page.
+
+Create:
+
+"Topic Opportunity Matrix"
+
+X axis:
+Content Frequency
+
+Y axis:
+Median Engagement
+
+Bubble size:
+Comment Volume
+
+Each bubble:
+Topic
+
+Use four conceptual regions:
+
+High frequency / High engagement
+High frequency / Low engagement
+Low frequency / High engagement
+Low frequency / Low engagement
+
+Add an explanation panel.
+
+Example:
+
+"Low-frequency, high-engagement topics may represent areas worth further testing."
+
+Do not automatically recommend increasing any topic.
+
+==================================================
+FEATURE 5 — OVERALL ANALYSIS
+==================================================
+
+Add an "Overall Analysis" section/page.
+
+It should synthesize:
+
+- engagement
+- platforms
+- topics
+- language
+- sentiment
+- peer comparison
+- opportunities
+
+Sections:
+
+Executive Summary
+Digital Strengths
+Observed Gaps
+Audience Response
+Platform Performance
+Topic Performance
+Peer Differences
+Potential Opportunities
+Recommended Experiments
+Data Limitations
+
+Use the existing mock data.
+
+Do not introduce new political persuasion functionality.
+
+==================================================
+FEATURE 6 — AI ANALYST CHATBOT
+==================================================
+
+Add a new page:
+
+"AI Analyst"
+
+This is an analytical assistant for the dashboard.
+
+It must NOT be a generic chatbot.
+
+Purpose:
+
+Allow the user to ask questions about the analyzed dataset.
+
+Example questions:
+
+"What are the strongest performing topics?"
+
+"Where is engagement weaker than peers?"
+
+"Which platforms show the biggest observed gaps?"
+
+"Which content types perform best?"
+
+"What changed over the selected period?"
+
+"What are the main themes in the sampled comments?"
+
+"Summarize the overall digital performance."
+
+"What areas are worth testing?"
+
+"Compare the selected politician with peers."
+
+Create clickable suggested questions.
+
+==================================================
+AI RESPONSE UI
+==================================================
+
+AI responses should be structured as:
+
+Answer
+
+Evidence
+
+Metrics
+
+Peer Comparison
+
+Potential Opportunity
+
+Limitations
+
+Example:
+
+ANSWER:
+"Video posts have higher median engagement than image posts in the demo dataset."
+
+EVIDENCE:
+"Median video engagement: 680
+Median image engagement: 390"
+
+PEER COMPARISON:
+"Peer median video share: 38%
+Selected account: 22%"
+
+POTENTIAL OPPORTUNITY:
+"Video content is an area worth testing more systematically."
+
+LIMITATION:
+"This is an observational pattern and does not establish causation."
+
+==================================================
+AI SERVICE ARCHITECTURE
+==================================================
+
+Do NOT connect to a real LLM yet.
+
+Create or extend:
+
+src/services/aiService.ts
+
+Implement:
+
+askAnalyst(question, context)
+
+Use mock structured responses for now.
+
+The service must be designed so it can later call:
+
+POST /api/ai/chat
+
+without requiring changes to the UI.
+
+The eventual backend response format should be:
+
+{
+  answer,
+  evidence,
+  metrics,
+  opportunities,
+  limitations
+}
+
+==================================================
+FEATURE 7 — DATA-DRIVEN AI INSIGHTS
+==================================================
+
+Enhance the existing AI Insights page.
+
+Add sections:
+
+Overall Performance
+Content Strengths
+Observed Gaps
+Audience Response
+Platform Opportunities
+Topic Opportunities
+Peer Differences
+Data Quality Warnings
+
+Each insight should contain:
+
+Title
+Explanation
+Evidence
+Metric
+Confidence
+
+Do not fabricate unsupported statistics.
+
+==================================================
+IMPORTANT CONSTRAINTS
+==================================================
+
+This is an INCREMENTAL UPDATE.
+
+DO NOT:
+
+- rebuild existing pages
+- replace the current UI
+- change the current color system
+- remove existing charts
+- change existing routes unnecessarily
+- create a backend
+- create a database
+- install Python
+- implement real ML
+- implement a real LLM
+- add authentication
+- add scraping
+
+Use the existing synthetic data architecture.
+
+Reuse existing components, charts, filters and types wherever possible.
+
+If an existing page already contains a related feature, EXTEND it rather than creating a duplicate.
+
+Keep the implementation modular.
+
+After implementation:
+
+1. Run the application.
+2. Check all existing pages still work.
+3. Check the new Competitor Benchmark page.
+4. Check Improvement Opportunities.
+5. Check Overall Analysis.
+6. Check AI Analyst.
+7. Check filters.
+8. Check charts.
+9. Check navigation.
+10. Fix TypeScript/build errors.
+
+Do not add anything else after these features.
