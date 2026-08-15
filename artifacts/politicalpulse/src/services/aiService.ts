@@ -13,7 +13,8 @@ function median(values: number[]) {
   return ordered.length % 2 ? ordered[middle] : Math.round((ordered[middle - 1] + ordered[middle]) / 2);
 }
 
-export async function askAnalyst(question: string, context: AnalystContext): Promise<AnalystResponse> {
+// Fallback mock implementation
+function generateMockResponse(question: string, context: AnalystContext): AnalystResponse {
   const posts = context.posts.length ? context.posts : [];
   const videoPosts = posts.filter((post) => post.mediaType === 'Video');
   const imagePosts = posts.filter((post) => post.mediaType === 'Image');
@@ -67,4 +68,29 @@ export async function askAnalyst(question: string, context: AnalystContext): Pro
     opportunities: ['Use this signal as an area worth testing, not as a guaranteed improvement.'],
     limitations: ['Synthetic data is not representative of a constituency and cannot support causal claims.'],
   };
+}
+
+export async function askAnalyst(question: string, context: AnalystContext): Promise<AnalystResponse> {
+  try {
+    // Try to call backend analyst API
+    const response = await fetch('/api/analyst', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        question,
+        accountName: 'Darshan Puttannaiah',
+        period: context.period || '12 weeks',
+      }),
+    });
+
+    if (response.ok) {
+      const data = await response.json();
+      return data.response;
+    }
+  } catch (error) {
+    console.warn('Analyst API unavailable, using mock data', error);
+  }
+
+  // Fallback to mock implementation
+  return generateMockResponse(question, context);
 }

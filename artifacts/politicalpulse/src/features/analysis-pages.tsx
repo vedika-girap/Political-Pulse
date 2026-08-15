@@ -1,4 +1,4 @@
-import { useMemo, useState, type ReactNode } from 'react';
+import { useMemo, useState, useEffect, type ReactNode } from 'react';
 import { Bar, BarChart, CartesianGrid, Cell, Legend, Line, LineChart, Pie, PieChart, PolarAngleAxis, PolarGrid, PolarRadiusAxis, Radar, RadarChart, ResponsiveContainer, Scatter, ScatterChart, Tooltip, XAxis, YAxis, ZAxis } from 'recharts';
 import { ArrowUpRight, Check, ChevronDown, CircleAlert, Lightbulb, MessageCircle, Search, Sparkles, Target, TrendingUp } from 'lucide-react';
 import { DEMO_POSTS, DEMO_TOPICS } from '@/services/api';
@@ -55,10 +55,19 @@ function getSelectedMetrics(posts: Post[]) {
 }
 
 export function PeerBenchmarkingPage() {
+  const [peers, setPeers] = useState<any[]>(peerProfiles);
   const [peerId, setPeerId] = useState(peerProfiles[0].id);
   const [period, setPeriod] = useState('12 weeks');
   const [platform, setPlatform] = useState('All platforms');
-  const peer = peerProfiles.find((item) => item.id === peerId) || peerProfiles[0];
+
+  useEffect(() => {
+    void fetch('/api/analytics/peers')
+      .then(res => res.ok ? res.json() : Promise.reject())
+      .then(setPeers)
+      .catch(() => setPeers(peerProfiles));
+  }, []);
+
+  const peer = peers.find((item) => item.id === peerId) || peers[0];
   const posts = useMemo(() => platform === 'All platforms' ? DEMO_POSTS : DEMO_POSTS.filter((post) => post.platform === platform), [platform]);
   const selected = getSelectedMetrics(posts);
   const peerMetrics = { posts: peer.posts, frequency: peer.postingFrequency, average: peer.averageEngagement, median: peer.medianEngagement, comments: peer.comments, videoShare: peer.videoShare };

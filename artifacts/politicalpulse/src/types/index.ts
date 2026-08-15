@@ -7,3 +7,4 @@ export interface Analytics { totalPosts: number; totalComments: number; totalEng
 export interface Insight { id: string; title: string; body: string; type: 'signal' | 'context' | 'caveat'; confidence: string; }
 export interface PeerProfile { id: string; name: string; posts: number; postingFrequency: number; averageEngagement: number; medianEngagement: number; engagementRate: number | null; comments: number; platformPresence: number; videoShare: number; topicMix: Record<string, number>; sentimentMix: Record<string, number>; languageMix: Record<string, number>; note: string; }
 export interface AnalystResponse { answer: string; evidence: string[]; metrics: Array<{ label: string; value: string }>; peerComparison: string; opportunities: string[]; limitations: string[]; }
+export interface Opportunity { title: string; evidence: string[]; potential: 'high' | 'medium' | 'low'; experiment: string; monitor: string; }

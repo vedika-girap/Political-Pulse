@@ -1,5 +1,11 @@
 # See https://docs.github.com/en/get-started/getting-started-with-git/ignoring-files for more about ignoring files.
 
+# Environment files
+.env
+.env.*
+!.env.example
+!.env.*.example
+
 # compiled output
 dist
 tmp
@@ -7,9 +13,16 @@ out-tsc
 *.tsbuildinfo
 .expo
 .expo-shared
+**/dist/**
+**/coverage/**
 
 # dependencies
 node_modules
+.pnpm-store/
+
+# testing
+coverage/
+*.lcov
 
 # IDEs and editors
 /.idea
@@ -19,9 +32,7 @@ node_modules
 *.launch
 .settings/
 *.sublime-workspace
-
-# IDE - VSCode
-.vscode/*
+.vscode/
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
@@ -30,20 +41,40 @@ node_modules
 # misc
 /.sass-cache
 /connect.lock
-/coverage
 /libpeerconnection.log
 npm-debug.log
 yarn-error.log
+pnpm-debug.log*
 testem.log
 /typings
+*.log
 
-# System Files
+# OS files
 .DS_Store
 Thumbs.db
 
-.cursor/rules/nx-rules.mdc
-.github/instructions/nx.instructions.md
+# Cursor / local tooling
+.cursor/
+.github/instructions/
 
 # Replit
 .cache/
 .local/
+.replit/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Temporary / generated data
+*.tmp
+*.bak
+*.swp
+*.orig
+
+# Local project data
+/data/
+!data/.gitkeep
+*.md
