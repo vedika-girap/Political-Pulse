@@ -474,20 +474,6 @@ docker run -p 80:80 political-pulse-web
 - [ ] Report scheduling & email delivery
 - [ ] Advanced visualization (maps, networks)
 - [ ] REST API client generation
-- [ ] Mobile app
-
-## 📞 Support
-
-**Issues & Questions:**
-
-- Open GitHub issue for bugs
-- Check [ENVIRONMENT_CONTRACT.md](./ENVIRONMENT_CONTRACT.md#troubleshooting) for common problems
-
-**Development:**
-
-- Code follows TypeScript best practices
-- All functions have JSDoc comments
-- Use Conventional Commits for messages
 
 ## 📄 License & Ethics
 
