@@ -498,6 +498,12 @@ This project processes publicly available political communications data.
 See [ENVIRONMENT_CONTRACT.md](./ENVIRONMENT_CONTRACT.md#contributing) for detailed guidelines.
 
 ## Captures
+<img width="1920" height="1020" alt="Screenshot 2026-08-18 013422" src="https://github.com/user-attachments/assets/95c1c35f-b3a0-4029-bb28-1376b9378649" />
+<img width="1920" height="1020" alt="Screenshot 2026-08-18 013501" src="https://github.com/user-attachments/assets/672cf5d2-0b49-4371-aa45-15bb2047277c" />
+<img width="1920" height="1020" alt="Screenshot 2026-08-18 013613" src="https://github.com/user-attachments/assets/afd14611-f814-414b-bf6b-a463013a204a" />
+<img width="1920" height="1020" alt="Screenshot 2026-08-18 013633" src="https://github.com/user-attachments/assets/c42d8a62-f240-4bc6-b53a-ea5d15f09946" />
+<img width="1920" height="1020" alt="Screenshot 2026-08-18 013646" src="https://github.com/user-attachments/assets/9124a295-4d06-4897-8973-46fb61ecf930" />
+<img width="1920" height="1020" alt="Screenshot 2026-08-18 013724" src="https://github.com/user-attachments/assets/4e856b07-d87e-424b-a07e-e56187f4f677" />
 <img width="1920" height="1020" alt="Screenshot 2026-08-18 013844" src="https://github.com/user-attachments/assets/58f10013-a004-468e-8054-dc4da1cc121a" />
 
 
