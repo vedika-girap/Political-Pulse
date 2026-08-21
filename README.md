@@ -497,6 +497,10 @@ This project processes publicly available political communications data.
 
 See [ENVIRONMENT_CONTRACT.md](./ENVIRONMENT_CONTRACT.md#contributing) for detailed guidelines.
 
+## Captures
+<img width="1920" height="1020" alt="Screenshot 2026-08-18 013844" src="https://github.com/user-attachments/assets/58f10013-a004-468e-8054-dc4da1cc121a" />
+
+
 ## 📚 Additional Resources
 
 - [Environment & Deployment Guide](./ENVIRONMENT_CONTRACT.md)
